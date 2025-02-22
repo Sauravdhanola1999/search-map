@@ -1,19 +1,18 @@
 import React, { useContext } from "react";
-import { globalContext } from "./Appointment";
+import { globalAppointmet } from "./Appointment";
 
 const DashBoard = () => {
-  const { loading, appointments } = useContext(globalContext);
+  const { loading, appointments } = useContext(globalAppointmet);
   if (loading) {
-    return <p>I am Loading Right Now</p>;
+    return <p>I am Loading Wait... Until Data is fetched....</p>;
   }
-
   return (
     <div>
-      <h1>Appointments</h1>
+      <h1>Doctor Appointments</h1>
       {appointments &&
         appointments.map((appoint, index) => (
           <li key={index}>
-            {appoint.doctorId} Date{" "}
+            Doctor I'd {appoint.doctorId} and{" "}
             {new Date(appoint.appointmentDate).toLocaleString()}
           </li>
         ))}

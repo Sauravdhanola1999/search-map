@@ -1,17 +1,16 @@
 import React, { createContext, useEffect, useState } from "react";
 import DashBoard from "./DashBoard";
-import axios from 'axios'
+import axios from "axios";
 
-const globalContext = createContext()
+const globalAppointmet = createContext();
 
 const Appointment = () => {
-  const [appointments, setAppointments] = useState([]);
+  const [appointments, setAppointments] = useState("");
   const [loading, setLoading] = useState(true);
-  
-  const fetchData = async () => {
+
+  const getData = async () => {
     try {
-      const response = await axios.get("/data.json");
-      console.log(response.data)
+      const response = await axios.get("./data.json");
       setAppointments(response.data);
     } catch (error) {
       console.log(error.message);
@@ -19,15 +18,18 @@ const Appointment = () => {
       setLoading(false);
     }
   };
+
   useEffect(() => {
-    fetchData();
+    getData();
   }, []);
 
   return (
-    <globalContext.Provider value={{appointments, loading}}>
-      <DashBoard />
-    </globalContext.Provider>
+    <globalAppointmet.Provider value={{appointments, loading}}> 
+      <div>
+        <DashBoard />
+      </div>
+    </globalAppointmet.Provider>
   );
 };
 
-export {Appointment, globalContext};
+export  {Appointment, globalAppointmet};

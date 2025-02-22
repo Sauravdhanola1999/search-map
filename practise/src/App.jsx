@@ -1,7 +1,7 @@
-import React from 'react'
-import Search from './Search'
-import Fetch from './Fetch'
-import { Appointment } from './Appointment'
+import React from "react";
+import Search from "./Search";
+import Fetch from "./Fetch";
+import { Appointment } from "./Appointment";
 
 const App = () => {
   return (
@@ -10,7 +10,7 @@ const App = () => {
       <Fetch />
       <Appointment />
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;
