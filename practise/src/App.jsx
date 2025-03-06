@@ -5,6 +5,7 @@ import { Appointment } from "./Appointment";
 import ToDo from "./ToDo";
 import Ref from "./Ref";
 import ForCounterRef from "./ForCounterRef";
+import NewSearch from "./NewSearch";
 
 const App = () => {
   return (
@@ -14,7 +15,8 @@ const App = () => {
       <Appointment />
       <ToDo /> */}
       {/* <Ref/> */}
-      <ForCounterRef />
+      {/* <ForCounterRef /> */}
+      <NewSearch />
     </div>
   );
 };
